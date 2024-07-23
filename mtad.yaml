@@ -27,7 +27,7 @@ build-parameters:
         - npm install
 modules:
   - name: RiskManagement-RiskManagement.Risks
-    type: html5
+    type: javascript.nodejs
     path: app/RiskManagement.Risks
     build-parameters:
       builder: custom
@@ -42,7 +42,7 @@ modules:
       supported-platforms: []
       build-result: dist-zip
   - name: RiskManagement-db-deployer
-    type: hdb
+    type: com.sap.xs.hdi
     path: gen/db
     parameters:
       buildpack: nodejs_buildpack
@@ -55,7 +55,7 @@ modules:
       - name: RiskManagement-service-uaa
       - name: RiskManagement-service-db
   - name: RiskManagement-srv
-    type: nodejs
+    type: javascript.nodejs
     path: gen/srv
     parameters:
       memory: 256MB
@@ -126,7 +126,7 @@ modules:
         parameters:
           content-target: true
   - name: RiskManagement-launchpad
-    type: html5
+    type: javascript.nodejs
     path: build/launchpad
     build-parameters:
       builder: custom
